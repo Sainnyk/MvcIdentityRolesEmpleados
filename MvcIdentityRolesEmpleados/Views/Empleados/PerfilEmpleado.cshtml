@@ -1,0 +1,11 @@
+﻿@using System.Security.Claims;
+
+
+<h1 style="color:deepskyblue">Bienvenido, @Context.User.Identity.Name</h1>
+
+<div class="text-center">
+    <h3 style="color:darkblue">Oficio: @Context.User.FindFirst(ClaimTypes.Role)</h3>
+    <h3 style="color:darkblue">Sueldo: @Context.User.FindFirst("Sueldo")</h3>
+    <br/>
+    <a asp-controller="Empleados" asp-action="CompisCurro">Compañeros</a>
+</div>
